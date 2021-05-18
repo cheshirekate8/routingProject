@@ -8,8 +8,8 @@ app.get('/', function (req, res) {
     res.send('Hello from Express!')
 });
 
-app.get('[xyz]', (req, res) => {
-    res.send('That\'s all I wrote')
+app.get(/\/.*(xyz)/, (req, res) => {
+    res.send('That\'s all I wrote.')
 })
 
 app.all('*', function (req, res) {

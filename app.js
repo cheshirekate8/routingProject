@@ -12,6 +12,15 @@ app.get(/\/.*(xyz)/, (req, res) => {
     res.send('That\'s all I wrote.')
 })
 
+app.get("/capital-letters/:sub_dir", (req, res) => {
+
+    // const something = /capital-letters(.+\/)/ 
+    // console.log(req.path)
+    // console.log(something)
+    res.send(req.params.sub_dir.toUpperCase())
+    // console.log(req.params)
+})
+
 app.all('*', function (req, res) {
     res.render('layout', {
         //assign variables here
